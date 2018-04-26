@@ -1,0 +1,84 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="internetove_forum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="obecne_nastaveni">
+          <xs:annotation>
+            <xs:documentation>obecné nastavení</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="jazyk"/>
+              <xs:element type="xs:string" name="kodovani"/>
+              <xs:element type="xs:byte" name="FB_plugin"/>
+              <xs:element type="xs:byte" name="GOOGLE_plugin"/>
+              <xs:element type="xs:string" name="časova_zona"/>
+              <xs:element type="xs:byte" name="twiter_plugin"/>
+              <xs:element name="nastaveni_modulu">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="komentare"/>
+                    <xs:element type="xs:byte" name="hodnoceni"/>
+                    <xs:element type="xs:byte" name="reakce"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="prava_uzivatelu">
+          <xs:annotation>
+            <xs:documentation>nastavení práv pro uživatele</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pravo" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="opravneni"/>
+                    <xs:element type="xs:byte" name="prohlizeni"/>
+                    <xs:element type="xs:byte" name="hodnoceni_prispevku"/>
+                    <xs:element type="xs:byte" name="pridani_prispevku"/>
+                    <xs:element type="xs:byte" name="mazani_prispevku"/>
+                    <xs:element type="xs:byte" name="blokace_uzivatele"/>
+                    <xs:element type="xs:byte" name="reakce_k_prispevku"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="uzivatel" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="diskuze" maxOccurs="unbounded" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>oddeleni 1 oddeleni 2 oddeleni 3 oddeleni 4 oddeleni 5</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="vek_omezeni"/>
+              <xs:element type="xs:string" name="titulek"/>
+              <xs:element name="uzivatelska_prava">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="uzivatel" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="nick"/>
+                          <xs:element type="xs:string" name="hodnost"/>
+                          <xs:element type="xs:byte" name="opravneni"/>
+                          <xs:element type="xs:string" name="vek"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="ID" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="vlakno" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
