@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<internetove_forum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSD.xsd">
+<!-- obecné nastavení-->
+
+<obecne_nastaveni> 
+  <jazyk>CZ</jazyk>
+  <kodovani>UTF-8</kodovani>
+  <FB_plugin>1</FB_plugin>
+  <GOOGLE_plugin>1</GOOGLE_plugin>
+  <časova_zona>UTC+1</časova_zona>
+  <twiter_plugin>1</twiter_plugin>
+  <nastaveni_modulu>
+  		<komentare>1</komentare>
+  		<hodnoceni>1</hodnoceni>
+  		<reakce>1</reakce>
+  </nastaveni_modulu>
+</obecne_nastaveni>
+<!-- nastavení práv pro uživatele -->
+<prava_uzivatelu>
+	<pravo uzivatel="správce">
+		<opravneni>4</opravneni>
+		<prohlizeni>1</prohlizeni>
+		<hodnoceni_prispevku>1</hodnoceni_prispevku>
+		<pridani_prispevku>1</pridani_prispevku>
+		<mazani_prispevku>1</mazani_prispevku>
+		<blokace_uzivatele>1</blokace_uzivatele>
+		<reakce_k_prispevku>1</reakce_k_prispevku>
+	</pravo>
+	<pravo uzivatel="moderator">
+		<opravneni>3</opravneni>
+		<prohlizeni>1</prohlizeni>
+		<hodnoceni_prispevku>1</hodnoceni_prispevku>
+		<pridani_prispevku>1</pridani_prispevku>
+		<mazani_prispevku>1</mazani_prispevku>
+		<blokace_uzivatele>0</blokace_uzivatele>
+		<reakce_k_prispevku>1</reakce_k_prispevku>
+	</pravo>
+	<pravo uzivatel="uzivatel">
+		<opravneni>2</opravneni>
+		<prohlizeni>1</prohlizeni>
+		<hodnoceni_prispevku>1</hodnoceni_prispevku>
+		<pridani_prispevku>1</pridani_prispevku>
+		<mazani_prispevku>0</mazani_prispevku>
+		<blokace_uzivatele>0</blokace_uzivatele>
+		<reakce_k_prispevku>1</reakce_k_prispevku>
+	</pravo>
+	<pravo uzivatel="host">
+		<opravneni>1</opravneni>
+		<prohlizeni>1</prohlizeni>
+		<hodnoceni_prispevku>1</hodnoceni_prispevku>
+		<pridani_prispevku>0</pridani_prispevku>
+		<mazani_prispevku>0</mazani_prispevku>
+		<blokace_uzivatele>0</blokace_uzivatele>
+		<reakce_k_prispevku>1</reakce_k_prispevku>
+	</pravo>
+</prava_uzivatelu>
+
+<!-- oddeleni 1-->
+<diskuze vlakno="pravidla">
+	<vek_omezeni>0</vek_omezeni>
+	<titulek>Pravidla fóra</titulek>
+	<uzivatelska_prava>
+		<uzivatel ID="1">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek>38</vek>
+		</uzivatel>
+		<uzivatel ID="2">
+			<nick>Moderator_1</nick>
+			<hodnost>Moderator</hodnost>
+			<opravneni>3</opravneni>
+			<vek>39</vek>
+		</uzivatel>
+		<uzivatel ID="3">
+			<nick>Zeus</nick>
+			<hodnost>Uzivatel urovne 3</hodnost>
+			<opravneni>2</opravneni>
+			<vek>18</vek>
+		</uzivatel>
+		<uzivatel ID="4">
+			<nick>host</nick>
+			<hodnost>neregistrovany uzivatel</hodnost>
+			<opravneni>1</opravneni>
+			<vek></vek>
+		</uzivatel>
+		<uzivatel ID="5">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek></vek>
+		</uzivatel>
+	</uzivatelska_prava>
+</diskuze>
+
+<!-- oddeleni 2-->
+<diskuze vlakno="moda">
+	<vek_omezeni>0</vek_omezeni>
+	<titulek>Pravidla fóra</titulek>
+	<uzivatelska_prava>
+		<uzivatel ID="1">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek>38</vek>
+		</uzivatel>
+		<uzivatel ID="2">
+			<nick>Moderator_1</nick>
+			<hodnost>Moderator</hodnost>
+			<opravneni>3</opravneni>
+			<vek>39</vek>
+		</uzivatel>
+		<uzivatel ID="3">
+			<nick>Zeus</nick>
+			<hodnost>Uzivatel urovne 3</hodnost>
+			<opravneni>2</opravneni>
+			<vek>18</vek>
+		</uzivatel>
+		<uzivatel ID="4">
+			<nick>host</nick>
+			<hodnost>neregistrovany uzivatel</hodnost>
+			<opravneni>1</opravneni>
+			<vek></vek>
+		</uzivatel>
+		<uzivatel ID="5">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek></vek>
+		</uzivatel>
+	</uzivatelska_prava>
+</diskuze>
+
+<!-- oddeleni 3-->
+<diskuze vlakno="zdravi">
+	<vek_omezeni>0</vek_omezeni>
+	<titulek>Pravidla fóra</titulek>
+	<uzivatelska_prava>
+		<uzivatel ID="1">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek>38</vek>
+		</uzivatel>
+		<uzivatel ID="2">
+			<nick>Moderator_1</nick>
+			<hodnost>Moderator</hodnost>
+			<opravneni>3</opravneni>
+			<vek>39</vek>
+		</uzivatel>
+		<uzivatel ID="3">
+			<nick>Zeus</nick>
+			<hodnost>Uzivatel urovne 3</hodnost>
+			<opravneni>2</opravneni>
+			<vek>18</vek>
+		</uzivatel>
+		<uzivatel ID="4">
+			<nick>host</nick>
+			<hodnost>neregistrovany uzivatel</hodnost>
+			<opravneni>1</opravneni>
+			<vek></vek>
+		</uzivatel>
+		<uzivatel ID="5">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek></vek>
+		</uzivatel>
+	</uzivatelska_prava>
+</diskuze>
+
+<!-- oddeleni 4-->
+<diskuze vlakno="literatura">
+	<vek_omezeni>0</vek_omezeni>
+	<titulek>Pravidla fóra</titulek>
+	<uzivatelska_prava>
+		<uzivatel ID="1">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek>38</vek>
+		</uzivatel>
+		<uzivatel ID="2">
+			<nick>Moderator_1</nick>
+			<hodnost>Moderator</hodnost>
+			<opravneni>3</opravneni>
+			<vek>39</vek>
+		</uzivatel>
+		<uzivatel ID="3">
+			<nick>Zeus</nick>
+			<hodnost>Uzivatel urovne 3</hodnost>
+			<opravneni>2</opravneni>
+			<vek>18</vek>
+		</uzivatel>
+		<uzivatel ID="4">
+			<nick>host</nick>
+			<hodnost>neregistrovany uzivatel</hodnost>
+			<opravneni>1</opravneni>
+			<vek></vek>
+		</uzivatel>
+		<uzivatel ID="5">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek></vek>
+		</uzivatel>
+	</uzivatelska_prava>
+</diskuze>
+
+<!-- oddeleni 5-->
+<diskuze vlakno="XXX">
+	<vek_omezeni>1</vek_omezeni>
+	<titulek>Pravidla fóra</titulek>
+	<uzivatelska_prava>
+		<uzivatel ID="1">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek>38</vek>
+		</uzivatel>
+		<uzivatel ID="2">
+			<nick>Moderator_1</nick>
+			<hodnost>Moderator</hodnost>
+			<opravneni>3</opravneni>
+			<vek>39</vek>
+		</uzivatel>
+		<uzivatel ID="3">
+			<nick>Zeus</nick>
+			<hodnost>Uzivatel urovne 3</hodnost>
+			<opravneni>2</opravneni>
+			<vek>18</vek>
+		</uzivatel>
+		<uzivatel ID="4">
+			<nick>host</nick>
+			<hodnost>neregistrovany uzivatel</hodnost>
+			<opravneni>1</opravneni>
+			<vek></vek>
+		</uzivatel>
+		<uzivatel ID="5">
+			<nick>Admin</nick>
+			<hodnost>Admin</hodnost>
+			<opravneni>4</opravneni>
+			<vek></vek>
+		</uzivatel>
+	</uzivatelska_prava>
+</diskuze>
+</internetove_forum>
