@@ -1,0 +1,126 @@
+<!--Odkaz na github: https://github.com/xklok/Filmova_databaze-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="filmDatabaze_konfigurace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nastaveni_obecne"> <!-- Obecné nastavení -->       
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="chars" name="charset"/>
+              <xs:element type="jaz" name="jazyk"/>
+              <xs:element type="vypzap" name="javascript"/>
+              <xs:element type="vypzap" name="vbscript"/>
+              <xs:element name="nastaveni_moduly">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="vypzap" name="komentare"/>
+                    <xs:element type="vypzap" name="vyhledavani"/>
+                    <xs:element type="vypzap" name="hodnoceni_filmu"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="prot" name="protokol"/>
+              <xs:element type="xs:string" name="omezeni_pristupu"/>
+              <xs:element type="email" name="kontakt_admin"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element> <!-- Konec obecného nastavení -->
+        <xs:element name="tabulka_prav"> <!-- Nastavení práv --> 
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pravo" maxOccurs="unbounded" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="oprav" name="mira_opravneni"/>
+                    <xs:element type="vypzap" name="pridavani_z"/>
+                    <xs:element type="vypzap" name="mazani_z"/>
+                    <xs:element type="vypzap" name="sprava_uziv"/>
+                    <xs:element type="vypzap" name="uprava_sekci"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="pNazev" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element> <!-- Konec Nastavení práv --> 
+        <xs:element name="oddeleni" maxOccurs="unbounded" minOccurs="0"> <!-- Nastavení Oddìlení --> 
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:integer" name="pocet_zaznamu_na_stranku"/>
+              <xs:element type="pop" name="popis"/>
+              <xs:element name="vek_omezeni"/>
+              <xs:element name="pristupova_prava">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="osoba" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="jmeno"/>
+                          <xs:element type="xs:string" name="prijmeni"/>
+                          <xs:element type="xs:string" name="prihl_jmeno"/>
+                          <xs:element type="oprav" name="pravomoce"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="id" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="oNazev" use="required"/>
+          </xs:complexType>
+        </xs:element> <!-- Konec nastavení oddìlení práv --> 
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Nastavení omezení -->
+  <xs:simpleType name="vypzap"> <!-- Omezení zapnuto/vypnuto -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  <xs:simpleType name="chars"> <!-- Omezení nastavení charsetu -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="utf-8"/>
+      <xs:enumeration value="windows-1258"/>
+      <xs:enumeration value="utf-7"/>
+      <xs:enumeration value="iso-8859"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="jaz"> <!-- Omezení nastavení jazykù -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CZ"/>
+      <xs:enumeration value="EN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="prot"> <!-- Omezení nastavení protokolù -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="http"/>
+      <xs:enumeration value="https"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="email"> <!-- Omezení nastavení emailových adres -->
+    <xs:restriction base="xs:string">
+       <xs:pattern value="[^@]+@[^\.]+\..+"/> <!-- Regex pro rozpoznání emailové adresy -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="oprav"><!-- Omezení nastavení oprávnìní-->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  <xs:simpleType name="pop"><!-- Omezení nastavení popisu sekce-->
+    <xs:restriction base="xs:string">
+    	<xs:minLength value="10"/>
+      	<xs:maxLength value="150"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  <xs:simpleType name="vek_omezeni"> <!-- Omezení nastavení vìkového omezení -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="21"/>
+    </xs:restriction>
+  </xs:simpleType> 
+</xs:schema>

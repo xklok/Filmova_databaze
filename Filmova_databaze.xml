@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <?xml-stylesheet type="text/xsl" href="XSL.xsl"?>
+  <!-- Odkaz na github: https://github.com/xklok/Filmova_databaze -->
+<filmDatabaze_konfigurace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FD.xsd">
+
+<!-- Obecné nastavení -->
+<nastaveni_obecne>
+	<charset>utf-8</charset>
+	<jazyk>CZ</jazyk>
+	<javascript>1</javascript>
+	<vbscript>0</vbscript>
+	<nastaveni_moduly>
+		<komentare>1</komentare>
+		<vyhledavani>1</vyhledavani>
+		<hodnoceni_filmu>0</hodnoceni_filmu>
+	</nastaveni_moduly>
+	<protokol>http</protokol>
+	<omezeni_pristupu></omezeni_pristupu>	
+	<kontakt_admin>admin@filmovadatabaze.cz</kontakt_admin>
+</nastaveni_obecne>
+
+<!-- Nastavení pravomocí uživatelù -->
+<tabulka_prav>
+	<pravo pNazev="Host">
+		<mira_opravneni>0</mira_opravneni>
+		<pridavani_z>0</pridavani_z>
+		<mazani_z>0</mazani_z>
+		<sprava_uziv>0</sprava_uziv>
+		<uprava_sekci>0</uprava_sekci>
+	</pravo>
+	<pravo pNazev="Registrovaný uživatel">
+		<mira_opravneni>1</mira_opravneni>
+		<pridavani_z>0</pridavani_z>
+		<mazani_z>0</mazani_z>
+		<sprava_uziv>0</sprava_uziv>
+		<uprava_sekci>0</uprava_sekci>
+	</pravo>
+    <pravo pNazev="Administrátor">
+		<mira_opravneni>2</mira_opravneni>
+		<pridavani_z>1</pridavani_z>
+		<mazani_z>1</mazani_z>
+		<sprava_uziv>1</sprava_uziv>
+		<uprava_sekci>1</uprava_sekci>
+	</pravo>
+</tabulka_prav>
+
+<!-- Nastavení Oddìlení è.1 -->
+  <oddeleni oNazev="Komedie">
+  	<pocet_zaznamu_na_stranku>30</pocet_zaznamu_na_stranku>
+  	<popis>Filmy s vtipnou tématikou.</popis>
+  	<vek_omezeni>0</vek_omezeni>
+  		<pristupova_prava>
+  			<osoba id="0">
+  				<jmeno>Návštìvník</jmeno>
+  				<prijmeni></prijmeni>
+  				<prihl_jmeno>guest</prihl_jmeno>
+  				<pravomoce>0</pravomoce>
+  			</osoba>
+  			<osoba id="1">
+  				<jmeno>Tomáš</jmeno>
+  				<prijmeni>Kamera</prijmeni>
+  				<prihl_jmeno>admin</prihl_jmeno>
+  				<pravomoce>2</pravomoce>
+  			</osoba>
+  			<osoba id="2">
+  				<jmeno>Petra</jmeno>
+  				<prijmeni>Matìjovská</prijmeni>
+  				<prihl_jmeno>PetMat42</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="3">
+  				<jmeno>Jan</jmeno>
+  				<prijmeni>Plachý</prijmeni>
+  				<prihl_jmeno>Plachos11</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="4">
+  				<jmeno>Dan</jmeno>
+  				<prijmeni>Kadubec</prijmeni>
+  				<prihl_jmeno>DanKad93</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  		</pristupova_prava>
+  </oddeleni>
+
+  <!-- Oddìlení è.2 -->
+  <oddeleni oNazev="Krimi">
+  	<pocet_zaznamu_na_stranku>25</pocet_zaznamu_na_stranku>
+  	<popis>Knihy zamìøené na detektivní vyšetøování a hádanky.</popis>
+  	<vek_omezeni>13</vek_omezeni>
+  		<pristupova_prava>
+  			<osoba id="0">
+  				<jmeno>Návštìvník</jmeno>
+  				<prijmeni></prijmeni>
+  				<prihl_jmeno>guest</prihl_jmeno>
+  				<pravomoce>0</pravomoce>
+  			</osoba>
+  			<osoba id="1">
+  				<jmeno>Tomáš</jmeno>
+  				<prijmeni>Kamera</prijmeni>
+  				<prihl_jmeno>admin</prihl_jmeno>
+  				<pravomoce>2</pravomoce>
+  			</osoba>
+  			<osoba id="2">
+  				<jmeno>Hana</jmeno>
+  				<prijmeni>Rùžová</prijmeni>
+  				<prihl_jmeno>Rose1988</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="3">
+  				<jmeno>Radek</jmeno>
+  				<prijmeni>Ostrý</prijmeni>
+  				<prihl_jmeno>Spejbl44</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="4">
+  				<jmeno>Martin</jmeno>
+  				<prijmeni>Vedlejší</prijmeni>
+  				<prihl_jmeno>123vedlejsi123</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  		</pristupova_prava>
+  </oddeleni>
+
+  <!-- Oddìlení è.3 -->
+  <oddeleni oNazev="Váleèné filmy">
+  	<pocet_zaznamu_na_stranku>25</pocet_zaznamu_na_stranku>
+  	<popis>Filmy zamìøené na váleènou tématiku.</popis>
+  	<vek_omezeni>15</vek_omezeni>
+  		<pristupova_prava>
+  			<osoba id="0">
+  				<jmeno>Návštìvník</jmeno>
+  				<prijmeni></prijmeni>
+  				<prihl_jmeno>guest</prihl_jmeno>
+  				<pravomoce>0</pravomoce>
+  			</osoba>
+  			<osoba id="1">
+  				<jmeno>Tomáš</jmeno>
+  				<prijmeni>Kamera</prijmeni>
+  				<prihl_jmeno>admin</prihl_jmeno>
+  				<pravomoce>2</pravomoce>
+  			</osoba>
+  			<osoba id="2">
+  				<jmeno>Petr</jmeno>
+  				<prijmeni>Malý</prijmeni>
+  				<prihl_jmeno>PM21</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="3">
+  				<jmeno>Anzelm</jmeno>
+  				<prijmeni>Franz</prijmeni>
+  				<prihl_jmeno>Anz25</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="4">
+  				<jmeno>Ondøej</jmeno>
+  				<prijmeni>Vojáèek</prijmeni>
+  				<prihl_jmeno>trooper337</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  		</pristupova_prava>
+  </oddeleni>
+
+  <!-- Oddìlení è.4 -->
+  <oddeleni oNazev="Fantasy">
+  	<pocet_zaznamu_na_stranku>35</pocet_zaznamu_na_stranku>
+  	<popis>Filmy zamìøené na tématiku ze svìta fantasy.</popis>
+  	<vek_omezeni>10</vek_omezeni>
+  		<pristupova_prava>
+  			<osoba id="0">
+  				<jmeno>Návštìvník</jmeno>
+  				<prijmeni></prijmeni>
+  				<prihl_jmeno>guest</prihl_jmeno>
+  				<pravomoce>0</pravomoce>
+  			</osoba>
+  			<osoba id="1">
+  				<jmeno>Tomáš</jmeno>
+  				<prijmeni>Kamera</prijmeni>
+  				<prihl_jmeno>admin</prihl_jmeno>
+  				<pravomoce>2</pravomoce>
+  			</osoba>
+  			<osoba id="2">
+  				<jmeno>Petra</jmeno>
+  				<prijmeni>Malá</prijmeni>
+  				<prihl_jmeno>PMala21</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="3">
+  				<jmeno>Petr</jmeno>
+  				<prijmeni>Voøíšek</prijmeni>
+  				<prihl_jmeno>kokos92</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="4">
+  				<jmeno>Hanz</jmeno>
+  				<prijmeni>Linzer</prijmeni>
+  				<prihl_jmeno>conan69</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  		</pristupova_prava>
+  </oddeleni>
+
+  <!-- Oddìlení è.5 -->
+  <oddeleni oNazev="Horory">
+  	<pocet_zaznamu_na_stranku>20</pocet_zaznamu_na_stranku>
+  	<popis>Filmy s hororovou tématikou.</popis>
+  	<vek_omezeni>18</vek_omezeni>
+  		<pristupova_prava>
+  			<osoba id="0">
+  				<jmeno>Návštìvník</jmeno>
+  				<prijmeni></prijmeni>
+  				<prihl_jmeno>guest</prihl_jmeno>
+  				<pravomoce>0</pravomoce>
+  			</osoba>
+  			<osoba id="1">
+  				<jmeno>Tomáš</jmeno>
+  				<prijmeni>Kamera</prijmeni>
+  				<prihl_jmeno>admin</prihl_jmeno>
+  				<pravomoce>2</pravomoce>
+  			</osoba>
+  			<osoba id="2">
+  				<jmeno>Jana</jmeno>
+  				<prijmeni>Malinová</prijmeni>
+  				<prihl_jmeno>Malina123</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="3">
+  				<jmeno>Petra</jmeno>
+  				<prijmeni>Malá</prijmeni>
+  				<prihl_jmeno>Pema89</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="4">
+  				<jmeno>Václav</jmeno>
+  				<prijmeni>Urbin</prijmeni>
+  				<prihl_jmeno>urbi2</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="5">
+  				<jmeno>Eduard</jmeno>
+  				<prijmeni>Gulaš</prijmeni>
+  				<prihl_jmeno>Gulash666</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  		</pristupova_prava>
+  </oddeleni>
+  
+  <!-- Oddìlení è.6 -->
+  <oddeleni oNazev="Pro Dìti">
+  	<pocet_zaznamu_na_stranku>20</pocet_zaznamu_na_stranku>
+  	<popis>Filmy zamìøené pro dìti.</popis>
+  	<vek_omezeni>0</vek_omezeni>
+  		<pristupova_prava>
+  			<osoba id="0">
+  				<jmeno>Návštìvník</jmeno>
+  				<prijmeni></prijmeni>
+  				<prihl_jmeno>guest</prihl_jmeno>
+  				<pravomoce>0</pravomoce>
+  			</osoba>
+  			<osoba id="1">
+  				<jmeno>Tomáš</jmeno>
+  				<prijmeni>Kamera</prijmeni>
+  				<prihl_jmeno>admin</prihl_jmeno>
+  				<pravomoce>2</pravomoce>
+  			</osoba>
+  			<osoba id="2">
+  				<jmeno>Jana</jmeno>
+  				<prijmeni>Malá</prijmeni>
+  				<prihl_jmeno>littlejana</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="3">
+  				<jmeno>Pavel</jmeno>
+  				<prijmeni>Havlík</prijmeni>
+  				<prihl_jmeno>Pavhavlik12</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  			<osoba id="4">
+  				<jmeno>Michal</jmeno>
+  				<prijmeni>Veverka</prijmeni>
+  				<prihl_jmeno>babycloud78</prihl_jmeno>
+  				<pravomoce>1</pravomoce>
+  			</osoba>
+  		</pristupova_prava>
+  </oddeleni>
+</filmDatabaze_konfigurace>
